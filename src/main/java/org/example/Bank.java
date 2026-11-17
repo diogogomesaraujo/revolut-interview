@@ -12,7 +12,7 @@ public class Bank {
 
     public synchronized void open(String account, long amount) {
         if (account == null)
-            throw new IllegalArgumentException("the account can't be null.");
+            throw new NullPointerException("the account can't be null.");
 
         if (account.isBlank())
             throw new IllegalArgumentException("the account can't be blank.");
@@ -31,7 +31,7 @@ public class Bank {
             throw new IllegalArgumentException("the sender and receiver can't be the same");
 
         if (sender == null || receiver == null)
-            throw new IllegalArgumentException("the accounts can't be null.");
+            throw new NullPointerException("the accounts can't be null.");
 
         if (sender.isBlank() || receiver.isBlank())
             throw new IllegalArgumentException("the accounts can't be blank.");
@@ -59,7 +59,7 @@ public class Bank {
         Long balance = balances.get(account);
 
         if (balance == null)
-            throw new IllegalArgumentException("account does not exist.");
+            throw new NullPointerException("account does not exist.");
 
         return balance;
     }

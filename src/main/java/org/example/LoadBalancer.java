@@ -12,7 +12,7 @@ public class LoadBalancer {
             throw new IllegalArgumentException("The maximum number of machines should be >= 0.");
 
         if (random == null)
-            throw new IllegalArgumentException("Random should not be null");
+            throw new NullPointerException("Random should not be null");
 
         this.machines = new ArrayList<String>();
         this.random = random;

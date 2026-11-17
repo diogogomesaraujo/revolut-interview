@@ -31,7 +31,7 @@ class BankTest {
     void openAccountNull() {
         String a = null;
 
-        assertThrows(IllegalArgumentException.class, () -> bank.open(a, 10));
+        assertThrows(NullPointerException.class, () -> bank.open(a, 10));
     }
 
     @Test
@@ -42,17 +42,17 @@ class BankTest {
         bank.open(a, 100);
         bank.open(b, 50);
 
-        assertThrows(IllegalArgumentException.class, () -> bank.transfer(a, null, 50));
-        assertThrows(IllegalArgumentException.class, () -> bank.transfer(null, b, 50));
-        assertThrows(IllegalArgumentException.class, () -> bank.transfer(null, null, 50));
+        assertThrows(NullPointerException.class, () -> bank.transfer(a, null, 50));
+        assertThrows(NullPointerException.class, () -> bank.transfer(null, b, 50));
+        assertThrows(NullPointerException.class, () -> bank.transfer(null, null, 50));
     }
 
     @Test
     void invalidAccountBalance() {
         String a = "A";
 
-        assertThrows(IllegalArgumentException.class, () -> bank.balance(null));
-        assertThrows(IllegalArgumentException.class, () -> bank.balance(a));
+        assertThrows(NullPointerException.class, () -> bank.balance(null));
+        assertThrows(NullPointerException.class, () -> bank.balance(a));
     }
 
     @Test

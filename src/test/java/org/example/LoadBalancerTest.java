@@ -18,7 +18,7 @@ class LoadBalancerTest {
 
     @Test
     void randomNotNull() {
-        assertThrows(IllegalArgumentException.class, () -> new LoadBalancer(null, 10));
+        assertThrows(NullPointerException.class, () -> new LoadBalancer(null, 10));
     }
 
     @Test
